@@ -37,7 +37,7 @@ setup(
     author = "Daniel Holth",
     author_email = "dholth@fastmail.fm",
     url = 'https://github.com/svpcom/pyzmq-ctypes',
-    download_url = 'https://github.com/svpcom/pyzmq-ctypes',
+    download_url = 'http://python.org/pypi/pyzmq-ctypes',
     description = "Python bindings for 0MQ (ctypes version).",
     install_requires = ['py', 'ctypes_configure', 'pycparser'],
     long_description = long_desc,
