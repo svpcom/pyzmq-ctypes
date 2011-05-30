@@ -25,6 +25,7 @@ Makes an attempt to emulate pyzmq.core.
 # <http://www.gnu.org/licenses/>.
 
 import random
+import platform
 
 # hack to avoid twisted tests failure
 import py
@@ -93,7 +94,7 @@ def _check_zmq_errno(result, func, arguments):
         raise ZMQError(errno)
     return result
 
-libzmq = CDLL("libzmq.so", use_errno=True)
+libzmq = CDLL("libzmq" + (".dylib" if platform.system() == "Darwin" else ".so"), use_errno=True)
 
 libzmq.zmq_version.restype = None
 libzmq.zmq_version.argtypes = [POINTER(c_int)]*3
