@@ -39,7 +39,7 @@ setup(
     url = 'http://github.com/svpcom/pyzmq-ctypes',
     download_url = 'http://python.org/pypi/pyzmq-ctypes',
     description = "Python bindings for 0MQ (ctypes version).",
-    install_requires = ['py', 'ctypes_configure', 'pycparser'],
+    install_requires = ['py', 'ctypes_configure', 'pycparser', 'pytest'],
     long_description = long_desc,
     license = "LGPL",
     classifiers = [
