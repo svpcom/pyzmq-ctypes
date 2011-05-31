@@ -40,7 +40,7 @@ class CConfigure(object):
             includes = ['zmq.h'],
             libraries = ['zmq']
             )
-    size_t = configure.SimpleType('size_t', c_int)
+    size_t = configure.SimpleType('size_t', c_long)
     
 for cname in ['ZMQ_AFFINITY', 'ZMQ_DOWNSTREAM', 'EADDRINUSE',
     'EADDRNOTAVAIL', 'EAGAIN', 'ECONNREFUSED', 'EFAULT', 'EFSM',
