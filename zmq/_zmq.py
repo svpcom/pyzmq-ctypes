@@ -151,7 +151,7 @@ libzmq.zmq_msg_move.argtypes = [POINTER(zmq_msg_t), POINTER(zmq_msg_t)]
 libzmq.zmq_msg_copy.argtypes = [POINTER(zmq_msg_t), POINTER(zmq_msg_t)]
 libzmq.zmq_msg_data.restype = c_void_p
 libzmq.zmq_msg_data.argtypes = [POINTER(zmq_msg_t)]
-libzmq.zmq_msg_size.restype = c_void_p
+libzmq.zmq_msg_size.restype = size_t
 libzmq.zmq_msg_size.argtypes = [POINTER(zmq_msg_t)]
 
 # 0MQ socket definition
@@ -441,16 +441,12 @@ class Socket(object):
         msg_c_len = len(data)
 
         zmq_msg_init_size(byref(msg), msg_c_len)
+        msg_buf = zmq_msg_data(byref(msg))
+        msg_buf_size = zmq_msg_size(byref(msg))
+        memmove(msg_buf, data, msg_buf_size)
 
-        try:
-            msg_buf = zmq_msg_data(byref(msg))
-            msg_buf_size = zmq_msg_size(byref(msg))
-            memmove(msg_buf, data, msg_buf_size)
-            return zmq_send(self.handle, byref(msg), flags)
-        finally:
-            zmq_msg_close(byref(msg))
+        return zmq_send(self.handle, byref(msg), flags)
             
-
 
     def recv(self, flags=0, copy=True, track=False):
         """s.recv(flags=0, copy=True, track=False)
