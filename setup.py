@@ -32,7 +32,7 @@ pyzmq-ctypes is a ctypes binding for the ZeroMQ library
 
 setup(
     name = "pyzmq-ctypes",
-    version = "2.1.2",
+    version = "2.1.3",
     packages = ['zmq', 'zmq.core'],
     author = "Daniel Holth",
     author_email = "dholth@fastmail.fm",
