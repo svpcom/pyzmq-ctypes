@@ -36,3 +36,4 @@ The following people have contributed to the project:
 * Scott Sadler (github AT mashi DOT org)
 * spez (steve AT hipmunk DOT com)
 * Thomas Kluyver (takowl AT gmail DOT com)
+* Peter Ward (peteraward AT gmail DOT com)
