@@ -37,10 +37,10 @@ class TestMultipart(BaseZMQTestCase):
         msg1 = 'message1'.encode()
         xreq.send(msg1)
         ident = xrep.recv()
-        more = xrep.rcvmore()
+        more = xrep.rcvmore
         self.assertEquals(more, True)
         msg2 = xrep.recv()
         self.assertEquals(msg1, msg2)
-        more = xrep.rcvmore()
+        more = xrep.rcvmore
         self.assertEquals(more, False)
 
