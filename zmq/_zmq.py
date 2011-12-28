@@ -309,6 +309,7 @@ class Socket(object):
             raise TypeError('expected str, got: %r' % addr)
         zmq_connect(self.handle, addr)
 
+    @property
     def rcvmore(self):
         """s.rcvmore()
 
