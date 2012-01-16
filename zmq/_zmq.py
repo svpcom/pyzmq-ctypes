@@ -26,11 +26,6 @@ Makes an attempt to emulate pyzmq.core.
 
 import random
 
-# hack to avoid twisted tests failure
-import py
-import pytest
-#
-
 from ctypes import *
 from ctypes.util import find_library
 from ctypes_configure import configure

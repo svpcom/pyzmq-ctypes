@@ -32,14 +32,14 @@ pyzmq-ctypes is a ctypes binding for the ZeroMQ library
 
 setup(
     name = "pyzmq-ctypes",
-    version = "2.1.4",
+    version = "2.1.5",
     packages = ['zmq', 'zmq.core'],
     author = "Daniel Holth",
     author_email = "dholth@fastmail.fm",
     url = 'http://github.com/svpcom/pyzmq-ctypes',
     download_url = 'http://python.org/pypi/pyzmq-ctypes',
     description = "Python bindings for 0MQ (ctypes version).",
-    install_requires = ['py', 'ctypes_configure', 'pycparser', 'pytest'],
+    install_requires = ['ctypes_configure', 'pycparser'],
     long_description = long_desc,
     license = "LGPL",
     classifiers = [
