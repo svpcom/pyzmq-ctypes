@@ -48,7 +48,7 @@ for cname in ['ZMQ_AFFINITY', 'ZMQ_DOWNSTREAM', 'EADDRINUSE',
     'ZMQ_SNDMORE', 'ZMQ_STREAMER', 'ZMQ_SUB', 'ZMQ_SUBSCRIBE', 'ZMQ_SWAP',
     'ZMQ_UNSUBSCRIBE', 'ZMQ_UPSTREAM', 'ZMQ_XREP', 'ZMQ_XREQ', 'ZMQ_MAX_VSM_SIZE',
     'ZMQ_FD', 'ZMQ_EVENTS', 'ZMQ_TYPE', 'ZMQ_LINGER', 'ZMQ_RECONNECT_IVL',
-    'ZMQ_BACKLOG']:
+    'ZMQ_BACKLOG', 'ZMQ_DEALER', 'ZMQ_ROUTER']:
         pyname = cname.split('_', 1)[-1]
         setattr(CConfigure, pyname, configure.ConstantInteger(cname))
 
