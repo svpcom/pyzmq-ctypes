@@ -517,7 +517,7 @@ def _poll(sockets, timeout=-1):
     timeout : int
         The number of milliseconds to poll for. Negative means no timeout.
     """
-    if major < c_int(3):
+    if major.value < 3:
         # timeout is us in 2.x, ms in 3.x
         # expected input is ms (matches 3.x)
         timeout = 1000 * timeout
